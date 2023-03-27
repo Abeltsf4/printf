@@ -22,34 +22,26 @@ int _printf(const char *format, ...)
  * @args: argument
  * Return: number of character
  */
-int _print(char *f, char *args)
+int _print(const char *format, va_list args)
 {
 	int c = 0;
 	int i = 0;
 
-	while (f && f[i] != '\0')
+	while (format && format[i] != '\0')
 	{
-		if (f[i] == '%')
+		if (format[i] == '%')
 		{
-			if (f[i + 1] == '\0')
+			if (format[i + 1] == '\0')
 				return (-1);
 			i++;
-			while (f[i] == ' ')
+			while (format[i] == ' ')
 				i++;
-			if (f[i] == '%')
-				c += writestdout('%');
-			if (valid_format(f[i]))
-			{
-				c += _print_det(f[i], args);
-			}
-			else
-				c += _print_invalid_format(f[i - 1], f[i], c);
+			if (format[i] == '%')
+				c += writetostdout('%');
+			c += (valid_format(format[i])) ? _print_det(format[i], args) : _print_invalid_format(format[i - 1], format[i], c);
 		}
 		else
-		{
-			count += writetostdout(f[i]);
-		}
-
+			c += writetostdout(format[i]);
 		i++;
 	}
 	return (c);
