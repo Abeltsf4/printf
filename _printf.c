@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 }
 /**
  * _print - print as printf feature
- * @f: format list
+ * @format: format list
  * @args: argument
  * Return: number of character
  */
@@ -38,7 +38,10 @@ int _print(const char *format, va_list args)
 				i++;
 			if (format[i] == '%')
 				c += writetostdout('%');
-			c += (valid_format(format[i])) ? _print_det(format[i], args) : _print_invalid_format(format[i - 1], format[i], c);
+			if (valid_format(format[i]))
+				c += _print_det(format[i], args);
+			else
+				c += _print_invalid_format(format[i - 1], format[i], c);
 		}
 		else
 			c += writetostdout(format[i]);
@@ -67,11 +70,11 @@ int valid_format(char c)
 }
 /**
  * _print_det - determine which format type selected
- * @f: format
+ * @format: format
  * @args: argument
  * Return: length of char
  */
-int _print_det(char f, va_list args)
+int _print_det(char format, va_list args)
 {
 	int i  = 0, length = 0;
 	ft_dt format_types[] = {
@@ -82,7 +85,7 @@ int _print_det(char f, va_list args)
 
 	while (format_types[i].specifier)
 	{
-		if (*format_types[i].specifier == f)
+		if (*format_types[i].specifier == format)
 			length = format_types[i].f(args);
 
 		i++;
@@ -107,9 +110,6 @@ int _print_invalid_format(char prev_format, char format, int count)
 		count += writetostdout(format);
 	}
 	else
-	{
 		count += writetostdout(format);
-	}
-
 	return (count);
 }
