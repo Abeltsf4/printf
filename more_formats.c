@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_int_binary - integer binary
+ * print_a_binary - integer binary
  * @args: argument
  * Return: binary
  */
-int print_int_binary(va_list args)
+int print_a_binary(va_list args)
 {
 	unsigned int x = 0;
 	int b = 0, new = 0;

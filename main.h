@@ -24,6 +24,6 @@ int print_a_char(va_list args);
 int print_a_string(va_list args);
 int print_a_integer(va_list args);
 void recursion_integer(int c);
-int print_int_binary(va_list args);
+int print_a_binary(va_list args);
 void recursion_int_binary(int c);
 #endif
