@@ -13,10 +13,8 @@ int print_a_binary(va_list args)
 	x = new;
 	if (new < 0)
 	{
-		writetostdout('1');
 		new = new * -1;
 		x = new;
-		b += 1;
 	}
 	while (x > 0)
 	{
