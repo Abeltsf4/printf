@@ -82,6 +82,7 @@ int _print_det(char format, va_list args)
 		{"s", print_a_string},
 		{"d", print_a_integer},
 		{"i", print_a_integer},
+		{"b", print_int_binary}
 		{NULL, NULL}
 	};
 
