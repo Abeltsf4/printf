@@ -56,7 +56,7 @@ int _print(const char *format, va_list args)
  */
 int valid_format(char c)
 {
-	char format_list[] = {'c', 's'};
+	char format_list[] = {'c', 's', 'd', 'i', 'b', '%'};
 
 	int i = 0;
 
@@ -80,7 +80,8 @@ int _print_det(char format, va_list args)
 	ft_dt format_types[] = {
 		{"c", print_a_char},
 		{"s", print_a_string},
-		{NULL, NULL}
+		{"d", print_a_integer},
+		{"i", print_a_integer}
 	};
 
 	while (format_types[i].specifier)
