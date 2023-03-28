@@ -25,7 +25,7 @@ int printBin(va_list args)
 		{
 			char z = '0' + a[i];
 
-			write(1, &z, 1);
+			writetostdout(1, &z, 1);
 			count++;
 		}
 	}
