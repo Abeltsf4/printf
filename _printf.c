@@ -27,7 +27,7 @@ int _print(const char *format, va_list args)
 	int c = 0;
 	int i = 0;
 
-	while (format && format[i] != '\0')
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -97,19 +97,19 @@ int _print_det(char format, va_list args)
  * _print_invalid_format - print unknown format type
  * @prev_format: previous format type
  * @format: current format type
- * @count: character count
+ * @c: character count
  * Return: character length
  */
-int _print_invalid_format(char prev_format, char format, int count)
+int _print_invalid_format(char prev_format, char format, int c)
 {
-	count += writetostdout('%');
+	c += writetostdout('%');
 
 	if (prev_format == ' ')
 	{
-		count += writetostdout(' ');
-		count += writetostdout(format);
+		c += writetostdout(' ');
+		c += writetostdout(format);
 	}
 	else
-		count += writetostdout(format);
-	return (count);
+		c += writetostdout(format);
+	return (c);
 }
