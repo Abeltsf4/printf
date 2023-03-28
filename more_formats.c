@@ -52,8 +52,6 @@ int print_unsigned_integer(va_list args)
 	int i = 0, j = 0;
 
 	x = va_arg(args, int);
-	if (x < 0)
-		x *= -1;
 	j = x;
 	while (x > 9)
 	{
