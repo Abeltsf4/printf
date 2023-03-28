@@ -81,7 +81,8 @@ int _print_det(char format, va_list args)
 		{"c", print_a_char},
 		{"s", print_a_string},
 		{"d", print_a_integer},
-		{"i", print_a_integer}
+		{"i", print_a_integer},
+		{NULL, NULL}
 	};
 
 	while (format_types[i].specifier)
