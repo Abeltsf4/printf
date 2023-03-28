@@ -56,7 +56,7 @@ int _print(const char *format, va_list args)
  */
 int valid_format(char c)
 {
-	char format_list[] = {'c', 's', 'd', 'i', 'b', '%'};
+	char format_list[] = {'c', 's', 'd', 'i', 'b', '%', 'u', 'o'};
 
 	int i = 0;
 
@@ -83,6 +83,8 @@ int _print_det(char format, va_list args)
 		{"d", print_a_integer},
 		{"i", print_a_integer},
 		{"b", print_a_binary},
+		{"u", print_unsigned_integer},
+		{"o", print_unsigned_integer},
 		{NULL, NULL}
 	};
 

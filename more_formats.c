@@ -41,3 +41,25 @@ void recursion_int_binary(int a)
 		recursion_int_binary(t / 2);
 	writetostdout(t % 2 + '0');
 }
+/**
+ * print_unsigned_integer - print unsigned integer
+ * @args: argument
+ * Return: count
+ */
+int print_unsigned_integer(va_list args)
+{
+	unsigned int x = 0;
+	int i = 0, j = 0;
+
+	x = va_arg(args, int);
+	if (x < 0)
+		x *= -1;
+	j = x;
+	while (x > 9)
+	{
+		x /= 10;
+		i++;
+	}
+	recursion_integer(j);
+	return (i);
+}
