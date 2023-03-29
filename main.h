@@ -28,4 +28,6 @@ int print_a_binary(va_list args);
 void recursion_int_binary(int c);
 int print_unsigned_integer(va_list args);
 int printBin(va_list args);
+int print_octal(va_list args);
+void recursion_octal(unsigned int x);
 #endif

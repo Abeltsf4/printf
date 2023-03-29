@@ -84,7 +84,7 @@ int _print_det(char format, va_list args)
 		{"i", print_a_integer},
 		{"b", printBin},
 		{"u", print_unsigned_integer},
-		{"o", print_unsigned_integer},
+		{"o", print_octal},
 		{NULL, NULL}
 	};
 
