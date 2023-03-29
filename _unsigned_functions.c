@@ -6,23 +6,27 @@
  */
 int print_octal(va_list args)
 {
-	unsigned int x = 0;
-	int i = 0, j = 0;
+	unsigned int x;
+	int i = 1, j = 0, k = 0;
+	char oct[12];
 
-	x = va_arg(args, int);
+	x = va_arg(args, unsigned int);
 	j = x;
 	if (j < 0)
 	{
-		j *= -1;
+		j = j * -1;
 		x = j;
 	}
-	while (j > 0)
+	while (j != 0)
 	{
-		j /= 8;
-		i++;
+		oct[i++] = j % 8 + '0';
+		j = j / 8;
+		k++;
 	}
-	recursion_octal(x);
-	return (i);
+	for (j  = i - 1; j > 0; j--)
+	      writetostdout(oct[j]);	
+	/* recursion_octal(x); */
+	return (k);
 }
 /**
  * recursion_octal - octal
