@@ -82,7 +82,7 @@ int print_unsigned_integer(va_list args)
 	unsigned int x = 0;
 	int i = 0, j = 0;
 
-	x = va_arg(args, unsigned int);
+	x = va_arg(args, int);
 	j = x;
 	while (x > 0)
 	{

@@ -56,7 +56,7 @@ int _print(const char *format, va_list args)
  */
 int valid_format(char c)
 {
-	char format_list[] = {'c', 's', 'd', 'i', 'b', '%', 'u', 'o'};
+	char format_list[] = {'c', 's', 'd', 'i', 'b', '%', 'u', 'o', 'x', 'X'};
 
 	int i = 0;
 
@@ -85,6 +85,8 @@ int _print_det(char format, va_list args)
 		{"b", printBin},
 		{"u", print_unsigned_integer},
 		{"o", print_octal},
+		{"x", print_lower_hexa},
+		{"X", print_upper_hexa},
 		{NULL, NULL}
 	};
 
