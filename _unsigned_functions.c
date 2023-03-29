@@ -41,11 +41,11 @@ void recursion_octal(unsigned int x)
  */
 int print_upper_hexa(va_list args)
 {
-	unsigned long int quo;
+	unsigned int quo;
 	int i = 1, j, k = 0, temp;
 	char hexadecNum[100];
 
-	quo = va_arg(args, unsigned long int);
+	quo = va_arg(args, unsigned int);
 	while (quo != 0)
 	{
 		temp = quo % 16;
@@ -68,11 +68,11 @@ int print_upper_hexa(va_list args)
  */
 int print_lower_hexa(va_list args)
 {
-	unsigned long int quo;
+	unsigned int quo;
 	int i = 1, j, k = 0, temp;
 	char hexadecNum[100];
 
-	quo = va_arg(args, unsigned long int);
+	quo = va_arg(args, unsigned int);
 	while (quo != 0)
 	{
 		temp = quo % 16;
