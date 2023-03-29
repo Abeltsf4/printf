@@ -49,6 +49,11 @@ int print_upper_hexa(va_list args)
 	char hexadecNum[100];
 
 	quo = va_arg(args, unsigned int);
+	if (quo == 0)
+	{
+		writetostdout('0');
+		return (1);
+	}
 	while (quo != 0)
 	{
 		temp = quo % 16;
@@ -76,6 +81,11 @@ int print_lower_hexa(va_list args)
 	char hexadecNum[100];
 
 	quo = va_arg(args, unsigned int);
+	if (quo == 0)
+	{
+		writetostdout('0');
+		return (1);
+	}
 	while (quo != 0)
 	{
 		temp = quo % 16;
