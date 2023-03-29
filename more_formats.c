@@ -84,6 +84,11 @@ int print_unsigned_integer(va_list args)
 
 	x = va_arg(args, int);
 	j = x;
+	if (j == 0)
+	{
+		writetostdout('0');
+		return (1);
+	}
 	while (x > 0)
 	{
 		x /= 10;
