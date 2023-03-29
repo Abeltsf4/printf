@@ -10,22 +10,16 @@ int print_octal(va_list args)
 	int i = 1, j = 0, k = 0;
 	char oct[12];
 
-	x = va_arg(args, int);
-	j = x;
-	if (j < 0)
-	{
-		j = j * -1;
-		x = j;
-	}
-	if (j == 0)
+	x = va_arg(args, unsigned int);
+	if (x == 0)
 	{
 		writetostdout('0');
 		return (1);
 	}
-	while (j > 0)
+	while (x > 0)
 	{
-		oct[i++] = j % 8 + '0';
-		j = j / 8;
+		oct[i++] = x % 8 + '0';
+		x = x / 8;
 		k++;
 	}
 	for (j  = i - 1; j > 0; j--)
