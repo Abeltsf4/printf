@@ -84,7 +84,7 @@ int print_unsigned_integer(va_list args)
 
 	x = va_arg(args, unsigned int);
 	j = x;
-	while (x > 9)
+	while (x > 0)
 	{
 		x /= 10;
 		i++;
