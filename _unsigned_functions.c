@@ -79,7 +79,7 @@ int print_lower_hexa(va_list args)
 		if (temp < 10)
 			temp += 48;
 		else
-			temp += 97;
+			temp += 87;
 		hexadecNum[i++] = temp;
 		quo = quo / 16;
 		k++;
