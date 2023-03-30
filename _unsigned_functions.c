@@ -146,6 +146,8 @@ int print_asci(va_list args)
 		else
 		{
 			j = 0;
+			hexadecNum[j++] = '\\';
+			hexadecNum[j++] = 'x';
 			while (a != 0)
 			{
 				temp = x[i] % 16;
