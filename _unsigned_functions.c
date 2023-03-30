@@ -133,7 +133,7 @@ int print_pointer(va_list args)
 int print_asci(va_list args)
 {
 	char *x;
-	int i = 2, j, k, temp;
+	int i = 0, j, k = 2, temp;
 	char a;
 	char hexadecNum[100];
 
@@ -145,9 +145,9 @@ int print_asci(va_list args)
 			writetostdout(x[i]);
 		else
 		{
+			j = 0;
 			while (a != 0)
 			{
-				j = 0;
 				temp = x[i] % 16;
 				temp += (temp < 10) ? 48 : 55;
 				hexadecNum[j++] = temp;
