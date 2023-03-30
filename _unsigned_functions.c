@@ -97,6 +97,16 @@ int print_pointer(va_list args)
 	void *quo = va_arg(args, void *);
 
 	x = (unsigned long)quo;
+	if (quo == NULL)
+	{
+		writetostdout('(');
+		writetostdout('n');
+		writetostdout('i');
+		writetostdout('l');
+		writetostdout('l');
+		writetostdout(')');
+		return (6);
+	}
 	if (x == 0)
 	{
 		writetostdout('0');
