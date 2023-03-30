@@ -145,12 +145,14 @@ int print_asci(va_list args)
 			writetostdout(x[i]);
 		else
 		{
+			if (a < 0)
+				a *= -1;
 			j = 0;
 			hexadecNum[j++] = '\\';
 			hexadecNum[j++] = 'x';
 			while (a != 0)
 			{
-				temp = x[i] % 16;
+				temp = a % 16;
 				temp += (temp < 10) ? 48 : 55;
 				hexadecNum[j++] = temp;
 				a /= 16;
