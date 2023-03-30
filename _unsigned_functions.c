@@ -103,9 +103,8 @@ int print_pointer(va_list args)
 		writetostdout('n');
 		writetostdout('i');
 		writetostdout('l');
-		writetostdout('l');
 		writetostdout(')');
-		return (6);
+		return (5);
 	}
 	if (x == 0)
 	{
