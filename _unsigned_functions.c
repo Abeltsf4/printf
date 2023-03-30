@@ -133,11 +133,11 @@ int print_pointer(va_list args)
 int print_asci(va_list args)
 {
 	char *x;
-	int i = 0, j, k, temp;
+	int i = 2, j, k, temp;
 	char a;
 	char hexadecNum[100];
 
-	x = va_arg(args, char *);
+	x = va_arg(args, char *); 
 	while (x[i] != '\0')
 	{
 		a = x[i];
