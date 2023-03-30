@@ -142,7 +142,10 @@ int print_asci(va_list args)
 	{
 		a = x[i];
 		if (a >= 32 && a < 127)
+		{
 			writetostdout(x[i]);
+			a += 1;
+		}
 		else
 		{
 			if (a < 0)
@@ -158,6 +161,7 @@ int print_asci(va_list args)
 				a /= 16;
 				j++;
 			}
+			a += 3;
 			for (k = j - 1; k > 0; k--)
 				writetostdout(hexadecNum[k]);
 		}
