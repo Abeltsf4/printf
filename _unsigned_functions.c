@@ -93,7 +93,7 @@ int print_pointer(va_list args)
 {
 	unsigned long x;
 	int i = 2, j, temp, k = 0;
-	char hexadecNum[17];
+	char hexadecNum[100];
 	void *quo = va_arg(args, void *);
 
 	x = (unsigned long)quo;
