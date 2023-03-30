@@ -108,10 +108,7 @@ int print_pointer(va_list args)
 		temp += (temp < 10) ? 48 : 87;
 		hexadecNum[i++] = temp;
 		x /= 16;
-		k++;
 	}
-	hexadecNum[i++] = 'x';
-	hexadecNum[i++] = '0';
 	for (j = i - 1; j >= 2; j--)
 		writetostdout(hexadecNum[j]);
 	return (k);
