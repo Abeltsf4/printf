@@ -141,7 +141,7 @@ int print_asci(va_list args)
 	while (x[i] != '\0')
 	{
 		a = x[i];
-		if (x[i] >= 32 && x[i] < 127)
+		if (a >= 32 && a < 127)
 			writetostdout(x[i]);
 		else
 		{
