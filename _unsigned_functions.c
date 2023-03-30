@@ -151,8 +151,6 @@ int print_asci(va_list args)
 			if (a < 0)
 				a *= -1;
 			j = 0;
-			hexadecNum[j++] = '\\';
-			hexadecNum[j++] = 'x';
 			while (a != 0)
 			{
 				temp = a % 16;
@@ -162,6 +160,8 @@ int print_asci(va_list args)
 				j++;
 			}
 			a += 3;
+			hexadecNum[j++] = 'x';
+			hexadecNum[j++] = '\\';
 			for (k = j - 1; k > 0; k--)
 				writetostdout(hexadecNum[k]);
 		}
