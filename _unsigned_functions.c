@@ -22,20 +22,9 @@ int print_octal(va_list args)
 		x = x / 8;
 		k++;
 	}
-	for (j  = i - 1; j > 0; j--)
-	      writetostdout(oct[j]);	
-	/* recursion_octal(x); */
+	for (j	= i - 1; j > 0; j--)
+		writetostdout(oct[j]);
 	return (k);
-}
-/**
- * recursion_octal - octal
- * @x: parm
- */
-void recursion_octal(unsigned int x)
-{
-	if (x / 8)
-		recursion_octal(x / 8);
-	writetostdout(x % 8 + '0');
 }
 /**
  * print_upper_hexa - hexa decimal
@@ -57,10 +46,7 @@ int print_upper_hexa(va_list args)
 	while (quo != 0)
 	{
 		temp = quo % 16;
-		if (temp < 10)
-			temp = temp + 48;
-		else
-			temp = temp + 55;
+		temp += (temp < 10) ? 48 : 55;
 		hexadecNum[i++] = temp;
 		quo = quo / 16;
 		k++;
@@ -89,15 +75,44 @@ int print_lower_hexa(va_list args)
 	while (quo != 0)
 	{
 		temp = quo % 16;
-		if (temp < 10)
-			temp += 48;
-		else
-			temp += 87;
+		temp += (temp < 10) ? 48 : 87;
 		hexadecNum[i++] = temp;
 		quo = quo / 16;
 		k++;
 	}
 	for (j = i - 1; j > 0; j--)
+		writetostdout(hexadecNum[j]);
+	return (k);
+}
+/**
+ * print_pointer - print pointer
+ * @args: argument
+ * Return: number of char
+ */
+int print_pointer(va_list args)
+{
+	unsigned long x;
+	int i = 2, j, temp, k = 0;
+	char hexadecNum[17];
+	void *quo = va_arg(args, void *);
+
+	x = (unsigned long)quo;
+	if (x == 0)
+	{
+		writetostdout('0');
+		return (1);
+	}
+	while (x != 0)
+	{
+		temp = x % 16;
+		temp += (temp < 10) ? 48 : 87;
+		hexadecNum[i++] = temp;
+		x /= 16;
+		k++;
+	}
+	hexadecNum[i++] = 'x';
+	hexadecNum[i++] = '0';
+	for (j = i - 1; j >= 2; j--)
 		writetostdout(hexadecNum[j]);
 	return (k);
 }
