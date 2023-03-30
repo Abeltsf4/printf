@@ -125,3 +125,39 @@ int print_pointer(va_list args)
 		writetostdout(hexadecNum[j]);
 	return (k);
 }
+/**
+ * print_asci - print asci code
+ * @args: argument
+ * Return: return char
+ */
+int print_asci(va_list args)
+{
+	char *x;
+	int i = 0, j, k, temp;
+	char a;
+	char hexadecNum[100];
+
+	x = va_arg(args, char *);
+	while (x[i] != '\0')
+	{
+		a = x[i];
+		if (x[i] >= 32 && x[i] < 127)
+			writetostdout(x[i]);
+		else
+		{
+			while (a != 0)
+			{
+				j = 0;
+				temp = x[i] % 16;
+				temp += (temp < 10) ? 48 : 55;
+				hexadecNum[j++] = temp;
+				a /= 16;
+				j++;
+			}
+			for (k = j - 1; k > 0; k--)
+				writetostdout(hexadecNum[k]);
+		}
+		i++;
+	}
+	return (i);
+}

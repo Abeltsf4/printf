@@ -32,4 +32,5 @@ int print_octal(va_list args);
 int print_upper_hexa(va_list args);
 int print_lower_hexa(va_list args);
 int print_pointer(va_list args);
+int print_asci(va_list args);
 #endif

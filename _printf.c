@@ -56,7 +56,7 @@ int _print(const char *format, va_list args)
  */
 int valid_format(char c)
 {
-	char format_list[] = {'c', 's', 'd', 'i', 'b', '%', 'u', 'o', 'x', 'X', 'p'};
+	char format_list[] = {'c', 's', 'd', 'i', 'b', '%', 'u', 'o', 'x', 'X', 'p', 'S'};
 
 	int i = 0;
 
@@ -88,6 +88,7 @@ int _print_det(char format, va_list args)
 		{"x", print_lower_hexa},
 		{"X", print_upper_hexa},
 		{"p", print_pointer},
+		{"S", print_asci},
 		{NULL, NULL}
 	};
 
